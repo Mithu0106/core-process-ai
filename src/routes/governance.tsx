@@ -40,7 +40,7 @@ function Governance() {
       step={6}
       eyebrow="Risk & policy check"
       title="Governance Result"
-      intro="We check the workflow you customized against simple safety and policy expectations."
+      intro="We check the workflow you customized against simple safety, policy and legal expectations, including AI Act-style requirements for high-risk AI decisions."
     >
       <div className="mx-auto max-w-2xl space-y-6">
         <div
