@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnalysisRouteImport } from './routes/analysis'
 import { Route as CustomizeRouteImport } from './routes/customize'
 import { Route as ExistingProcessRouteImport } from './routes/existing-process'
+import { Route as GovernanceRouteImport } from './routes/governance'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as WorkflowRouteImport } from './routes/workflow'
 
@@ -36,6 +37,11 @@ const ExistingProcessRoute = ExistingProcessRouteImport.update({
   path: '/existing-process',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GovernanceRoute = GovernanceRouteImport.update({
+  id: '/governance',
+  path: '/governance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/analysis': typeof AnalysisRoute
   '/customize': typeof CustomizeRoute
   '/existing-process': typeof ExistingProcessRoute
+  '/governance': typeof GovernanceRoute
   '/how-it-works': typeof HowItWorksRoute
   '/workflow': typeof WorkflowRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/analysis': typeof AnalysisRoute
   '/customize': typeof CustomizeRoute
   '/existing-process': typeof ExistingProcessRoute
+  '/governance': typeof GovernanceRoute
   '/how-it-works': typeof HowItWorksRoute
   '/workflow': typeof WorkflowRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/analysis': typeof AnalysisRoute
   '/customize': typeof CustomizeRoute
   '/existing-process': typeof ExistingProcessRoute
+  '/governance': typeof GovernanceRoute
   '/how-it-works': typeof HowItWorksRoute
   '/workflow': typeof WorkflowRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/analysis'
     | '/customize'
     | '/existing-process'
+    | '/governance'
     | '/how-it-works'
     | '/workflow'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/analysis'
     | '/customize'
     | '/existing-process'
+    | '/governance'
     | '/how-it-works'
     | '/workflow'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/analysis'
     | '/customize'
     | '/existing-process'
+    | '/governance'
     | '/how-it-works'
     | '/workflow'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AnalysisRoute: typeof AnalysisRoute
   CustomizeRoute: typeof CustomizeRoute
   ExistingProcessRoute: typeof ExistingProcessRoute
+  GovernanceRoute: typeof GovernanceRoute
   HowItWorksRoute: typeof HowItWorksRoute
   WorkflowRoute: typeof WorkflowRoute
 }
@@ -138,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExistingProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/governance': {
+      id: '/governance'
+      path: '/governance'
+      fullPath: '/governance'
+      preLoaderRoute: typeof GovernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/how-it-works': {
       id: '/how-it-works'
       path: '/how-it-works'
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AnalysisRoute: AnalysisRoute,
   CustomizeRoute: CustomizeRoute,
   ExistingProcessRoute: ExistingProcessRoute,
+  GovernanceRoute: GovernanceRoute,
   HowItWorksRoute: HowItWorksRoute,
   WorkflowRoute: WorkflowRoute,
 }
