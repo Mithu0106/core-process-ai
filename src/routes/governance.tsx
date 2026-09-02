@@ -32,7 +32,7 @@ function Governance() {
     { label: "Human Oversight", pass: s.humanReview },
     { label: "Risk Control", pass: s.humanReview },
     { label: "Audit Trail", pass: s.history },
-    { label: "AI Act / Legal Compliance", pass: s.humanReview && s.explanations },
+    { label: "AI Act / Legal Compliance", pass: s.humanReview && s.explain },
   ];
 
   return (
