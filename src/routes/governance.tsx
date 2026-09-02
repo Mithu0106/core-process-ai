@@ -68,8 +68,8 @@ function Governance() {
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 {ok
-                  ? "Human review is included for the higher-risk AI decision."
-                  : "This workflow removes human review from a higher-risk decision."}
+                  ? "Human review is included for the higher-risk AI decision, and explanations are kept for audit and legal compliance."
+                  : "This workflow removes human review from a higher-risk decision, which can conflict with AI Act and governance expectations."}
               </p>
               {!ok ? (
                 <div className="mt-4 rounded-xl border border-warn/25 bg-card p-4">
@@ -77,7 +77,7 @@ function Governance() {
                     <Lightbulb className="size-4 text-accent" /> Recommended action
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Keep a human approval step before the final decision.
+                    Keep a human approval step and AI explanations before the final decision to meet policy and legal requirements.
                   </p>
                 </div>
               ) : null}
