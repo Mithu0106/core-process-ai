@@ -20,7 +20,7 @@ export const Route = createFileRoute("/governance")({
       },
     ],
   }),
-  component: Governance;
+  component: Governance,
 });
 
 function Governance() {
